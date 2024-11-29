@@ -1,50 +1,95 @@
-# React + TypeScript + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customer side order system for a restaurant.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Demo Link: Please wait for the deployment
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- View Menu
+- Add/Remove Items to Cart
+- Order Summary
+- Checkout
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Frontend Framework**: React + TypeScript
+- **UI Components**: Ant Design
+- **Styling**: Tailwind CSS
+
+## Prerequisites
+
+- Node.js >= version
+- npm >= version
+- Other dependencies...
+
+## Installation
+
+### Prerequisites
+
+- Node.js >= 14.0.0
+- npm >= 6.0.0
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/chyuanhan/order_system_frontend.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Set up environment variables
+   Create a `.env` file and add the following:
+
+```bash
+VITE_BACKEND_URL=your_backend_url
+VITE_BACKEND_ASSET_URL=your_asset_url
+```
+
+4. Start development server
+
+```bash
+npm run dev
+```
+
+## Project Structure
+
+├── components/
+│ ├── FixedCartBar.tsx # Fixed footer cart bar
+│ ├── MenuItem.tsx # Menu item
+│ ├── TopBar.tsx # Top navigation bar
+│ ├── NotFound.tsx # 404 page
+│
+├── pages/
+│ ├── User/
+│ │ ├── MenuPage.tsx # Menu page
+│ │ ├── OrderConfirmation.tsx # Order confirmation page
+│ │ ├── OrderDetailsPage.tsx # Order details page
+│
+├── context/
+│ └── AuthContext.tsx # Authentication context
+│
+├── hooks/ # Custom hooks
+│ └── useAuth.ts
+│
+├── App.tsx
+├── index.css
+├── main.tsx
+└── vite-env.d.ts
+
+## API Endpoints
+
+### Menu Management
+
+- `GET /menu` - Get all menu items
+- `POST /menu` - Add a new menu item
+- `PUT /menu/:id` - Update a menu item
+- `DELETE /menu/:id` - Delete a menu item
