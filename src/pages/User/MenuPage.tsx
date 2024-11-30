@@ -51,7 +51,6 @@ const MenuPage: React.FC = () => {
   useEffect(() => {
     const fetchMenuData = async () => {
       try {
-        console.log(`${import.meta.env.VITE_BACKEND_URL}/menu`);
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/menu`);
         if (!response.ok) {
           throw new Error('Failed to fetch menu data');
