@@ -4,7 +4,7 @@ A customer side order system for a restaurant.
 
 ## Demo
 
-Demo Link: Please wait for the deployment
+Demo Link: [https://order-system-frontend.vercel.app/table/1](https://order-system-frontend.vercel.app/table/1)
 
 ## Features
 
