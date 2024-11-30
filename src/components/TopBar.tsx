@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { useParams } from 'react-router-dom';
+import logo from '../assets/logo.jpg';
 
 interface TopBarProps {
   onSearch?: (term: string) => void;
@@ -45,7 +46,7 @@ const TopBar: React.FC<TopBarProps> = ({ onSearch }) => {
 
   useEffect(() => {
     const controlNavbar = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 100) { // 向下滾動且超過100px
+      if (window.scrollY > lastScrollY && window.scrollY > 100) { 
         setIsVisible(false);
       } else {
         setIsVisible(true);
@@ -67,7 +68,7 @@ const TopBar: React.FC<TopBarProps> = ({ onSearch }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex-shrink-0 flex items-center">
-              <img className="h-16 w-auto" src="/logo.jpg" alt="Restaurant Logo" />
+              <img className="h-16 w-auto" src={logo} alt="Restaurant Logo" />
             </div>
             <div className="flex items-center">
               <div className="hidden md:flex flex-1 max-w-md mx-4 items-center">
